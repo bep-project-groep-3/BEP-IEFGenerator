@@ -5,6 +5,7 @@ import org.nl.hu.sie.bep.external.domain.Klant;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class BedrijfRow extends Row {
   private String bedrijfsNaam;
@@ -37,6 +38,29 @@ public class BedrijfRow extends Row {
       klantRow.convert(klant);
       klanten.add(klantRow);
     }
+  }
+
+  @Override
+  public boolean equals(Object otherBedrijfRow) {
+    if (this == otherBedrijfRow) return true;
+    if (otherBedrijfRow == null || getClass() != otherBedrijfRow.getClass()) return false;
+    BedrijfRow that = (BedrijfRow) otherBedrijfRow;
+
+    return bedrijfsNaam.equals(that.getBedrijfsNaam())
+        && straat.equals(that.getStraat())
+        && straatNummer.equals(that.getStraatNummer())
+        && postcode.equals(that.getPostcode())
+        && plaats.equals(that.getPlaats())
+        && btwcode.equals(that.getBtwcode())
+        && iban.equals(that.getIban())
+        && bic.equals(that.getBic())
+        && klanten.equals(that.getKlanten());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(
+        bedrijfsNaam, straat, straatNummer, postcode, plaats, btwcode, iban, bic, klanten);
   }
 
   public String getBedrijfsNaam() {

@@ -7,6 +7,7 @@ import org.nl.hu.sie.bep.external.domain.Persoon;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class KlantRow extends Row {
   public KlantRow() {
@@ -51,6 +52,45 @@ public class KlantRow extends Row {
       factuurInfoRow.convert(factuur);
       facturen.add(factuurInfoRow);
     }
+  }
+
+  @Override
+  public boolean equals(Object otherKlantRow) {
+    if (this == otherKlantRow) return true;
+    if (otherKlantRow == null || getClass() != otherKlantRow.getClass()) return false;
+    KlantRow that = (KlantRow) otherKlantRow;
+
+    return bedrijfsnaam.equals(that.getBedrijfsnaam())
+        && aanhef.equals(that.getAanhef())
+        && voornaam.equals(that.getVoornaam())
+        && tussenvoegsel.equals(that.getTussenvoegsel())
+        && achternaam.equals(that.getAchternaam())
+        && straat.equals(that.getStraat())
+        && huisnummer.equals(that.getHuisnummer())
+        && postcode.equals(that.getPostcode())
+        && plaats.equals(that.getPlaats())
+        && btwNummer.equals(that.getBtwNummer())
+        && iban.equals(that.getIban())
+        && bic.equals(that.getBic())
+        && facturen.equals(that.getFacturen());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(
+        bedrijfsnaam,
+        aanhef,
+        voornaam,
+        tussenvoegsel,
+        achternaam,
+        straat,
+        huisnummer,
+        postcode,
+        plaats,
+        btwNummer,
+        iban,
+        bic,
+        facturen);
   }
 
   public String getBedrijfsnaam() {
