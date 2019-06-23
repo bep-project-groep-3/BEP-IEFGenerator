@@ -1,6 +1,6 @@
 package org.nl.hu.sie.bep.dto;
 
-import org.nl.hu.sie.bep.domain.*;
+import org.nl.hu.sie.bep.external.domain.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,101 +48,5 @@ public class KlantRow extends Row {
       factuurInfoRow.convert(factuur);
       facturen.add(factuurInfoRow);
     }
-  }
-
-  public String getBedrijfsnaam() {
-    return bedrijfsnaam;
-  }
-
-  public String getAanhef() {
-    return aanhef;
-  }
-
-  public String getVoornaam() {
-    return voornaam;
-  }
-
-  public String getTussenvoegsel() {
-    return tussenvoegsel;
-  }
-
-  public String getAchternaam() {
-    return achternaam;
-  }
-
-  public String getStraat() {
-    return straat;
-  }
-
-  public String getHuisnummer() {
-    return huisnummer;
-  }
-
-  public String getPostcode() {
-    return postcode;
-  }
-
-  public String getPlaats() {
-    return plaats;
-  }
-
-  public String getBtwNummer() {
-    return btwNummer;
-  }
-
-  public String getIban() {
-    return iban;
-  }
-
-  public String getBic() {
-    return bic;
-  }
-
-  public List<FactuurInfoRow> getFacturen() {
-    return facturen;
-  }
-
-  @Override
-  public String toString() {
-    return "KlantRow{"
-        + "bedrijfsnaam='"
-        + bedrijfsnaam
-        + '\''
-        + ", aanhef='"
-        + aanhef
-        + '\''
-        + ", voornaam='"
-        + voornaam
-        + '\''
-        + ", tussenvoegsel='"
-        + tussenvoegsel
-        + '\''
-        + ", achternaam='"
-        + achternaam
-        + '\''
-        + ", straat='"
-        + straat
-        + '\''
-        + ", huisnummer='"
-        + huisnummer
-        + '\''
-        + ", postcode='"
-        + postcode
-        + '\''
-        + ", plaats='"
-        + plaats
-        + '\''
-        + ", btwNummer='"
-        + btwNummer
-        + '\''
-        + ", iban='"
-        + iban
-        + '\''
-        + ", bic='"
-        + bic
-        + '\''
-        + ", facturen="
-        + facturen
-        + '}';
   }
 }

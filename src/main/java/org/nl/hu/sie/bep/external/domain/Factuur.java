@@ -1,4 +1,4 @@
-package org.nl.hu.sie.bep.domain;
+package org.nl.hu.sie.bep.external.domain;
 
 import java.util.Date;
 import java.util.List;

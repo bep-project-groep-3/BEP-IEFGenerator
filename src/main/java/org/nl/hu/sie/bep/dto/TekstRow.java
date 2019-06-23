@@ -10,13 +10,4 @@ public class TekstRow extends Row {
   public void convert(String text) {
     productieOmschrijving = text;
   }
-
-  public String getProductieOmschrijving() {
-    return productieOmschrijving;
-  }
-
-  @Override
-  public String toString() {
-    return "TekstRow{" + "productieOmschrijving='" + productieOmschrijving + '}';
-  }
 }

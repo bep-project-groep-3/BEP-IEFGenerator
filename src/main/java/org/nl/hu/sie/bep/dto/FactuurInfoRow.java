@@ -1,7 +1,7 @@
 package org.nl.hu.sie.bep.dto;
 
-import org.nl.hu.sie.bep.domain.Factuur;
-import org.nl.hu.sie.bep.domain.FactuurRegel;
+import org.nl.hu.sie.bep.external.domain.Factuur;
+import org.nl.hu.sie.bep.external.domain.FactuurRegel;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -26,30 +26,5 @@ public class FactuurInfoRow extends Row {
       factuurRow.convert(factuur, factuurRegel);
       factuurRegels.add(factuurRow);
     }
-  }
-
-  public Date getFactuurdatum() {
-    return factuurdatum;
-  }
-
-  public String getFactuurNummer() {
-    return factuurNummer;
-  }
-
-  public List<FactuurRow> getFactuurRegels() {
-    return factuurRegels;
-  }
-
-  @Override
-  public String toString() {
-    return "FactuurInfoRow{"
-        + "factuurdatum="
-        + factuurdatum
-        + ", factuurNummer='"
-        + factuurNummer
-        + '\''
-        + ", factuurRegels="
-        + factuurRegels
-        + '}';
   }
 }

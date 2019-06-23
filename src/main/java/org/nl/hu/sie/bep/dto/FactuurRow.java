@@ -1,7 +1,7 @@
 package org.nl.hu.sie.bep.dto;
 
-import org.nl.hu.sie.bep.domain.Factuur;
-import org.nl.hu.sie.bep.domain.FactuurRegel;
+import org.nl.hu.sie.bep.external.domain.Factuur;
+import org.nl.hu.sie.bep.external.domain.FactuurRegel;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -49,7 +49,14 @@ public class FactuurRow extends Row {
 
       for (int i = 0; i < descriptionForRows.length() / (double) DESCRIPTION_INFO_LENGTH; i++) {
         TekstRow tekstRow = new TekstRow();
-        tekstRow.convert(descriptionForRows.substring(i * DESCRIPTION_LENGTH, DESCRIPTION_LENGTH));
+
+        int substringStartIndex = i * DESCRIPTION_INFO_LENGTH;
+        int substringEndIndex =
+            substringStartIndex + DESCRIPTION_INFO_LENGTH > descriptionForRows.length()
+                ? descriptionForRows.length()
+                : substringStartIndex + DESCRIPTION_INFO_LENGTH;
+
+        tekstRow.convert(descriptionForRows.substring(substringStartIndex, substringEndIndex));
         tekstRegels.add(tekstRow);
       }
     }
@@ -62,59 +69,5 @@ public class FactuurRow extends Row {
       return BtwType.LAAG;
     }
     return BtwType.HOOG;
-  }
-
-  public String getProductOmschrijving() {
-    return productOmschrijving;
-  }
-
-  public double getAantal() {
-    return aantal;
-  }
-
-  public double getPrijsPerStuk() {
-    return prijsPerStuk;
-  }
-
-  public BtwType getBtwType() {
-    return btwType;
-  }
-
-  public Date getRegelDatum() {
-    return regelDatum;
-  }
-
-  public String getEenheid() {
-    return eenheid;
-  }
-
-  public List<TekstRow> getTekstRegels() {
-    return tekstRegels;
-  }
-
-  @Override
-  public String toString() {
-    return "FactuurRow{"
-        + "DESCRIPTION_LENGTH="
-        + DESCRIPTION_LENGTH
-        + ", DESCRIPTION_INFO_LENGTH="
-        + DESCRIPTION_INFO_LENGTH
-        + ", productOmschrijving='"
-        + productOmschrijving
-        + '\''
-        + ", aantal="
-        + aantal
-        + ", prijsPerStuk="
-        + prijsPerStuk
-        + ", btwType="
-        + btwType
-        + ", regelDatum="
-        + regelDatum
-        + ", eenheid='"
-        + eenheid
-        + '\''
-        + ", tekstRegels="
-        + tekstRegels
-        + '}';
   }
 }
