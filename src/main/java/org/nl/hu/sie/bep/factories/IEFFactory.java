@@ -1,9 +1,15 @@
 package org.nl.hu.sie.bep.factories;
 
+import org.nl.hu.sie.bep.domain.Bedrijf;
+import org.nl.hu.sie.bep.dto.BedrijfRow;
 import org.nl.hu.sie.bep.dto.Row;
 
 public class IEFFactory {
-    public static Row create(Company company){
+  private IEFFactory() {}
 
-    }
+  public static Row create(Bedrijf bedrijf) {
+    BedrijfRow bedrijfRow = new BedrijfRow();
+    bedrijfRow.convert(bedrijf);
+    return bedrijfRow;
+  }
 }
