@@ -6,7 +6,6 @@ import org.nl.hu.sie.bep.external.domain.FactuurRegel;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 
 public class FactuurRow extends Row {
 
@@ -68,27 +67,6 @@ public class FactuurRow extends Row {
       return BtwType.LAAG;
     }
     return BtwType.HOOG;
-  }
-
-  @Override
-  public boolean equals(Object otherFactuurRow) {
-    if (this == otherFactuurRow) return true;
-    if (otherFactuurRow == null || getClass() != otherFactuurRow.getClass()) return false;
-    FactuurRow that = (FactuurRow) otherFactuurRow;
-
-    return productOmschrijving.equals(that.getProductOmschrijving())
-        && aantal == that.getAantal()
-        && prijsPerStuk == that.getPrijsPerStuk()
-        && btwType.equals(that.getBtwType())
-        && regelDatum.compareTo(that.getRegelDatum()) == 0
-        && eenheid.equals(that.getEenheid())
-        && tekstRegels.equals(that.getTekstRegels());
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(
-        productOmschrijving, aantal, prijsPerStuk, btwType, regelDatum, eenheid, tekstRegels);
   }
 
   public String getProductOmschrijving() {

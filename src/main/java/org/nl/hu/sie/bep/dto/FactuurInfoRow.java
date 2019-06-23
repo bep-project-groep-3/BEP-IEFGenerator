@@ -6,7 +6,6 @@ import org.nl.hu.sie.bep.external.domain.FactuurRegel;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 
 public class FactuurInfoRow extends Row {
   public FactuurInfoRow() {
@@ -27,22 +26,6 @@ public class FactuurInfoRow extends Row {
       factuurRow.convert(factuur, factuurRegel);
       factuurRegels.add(factuurRow);
     }
-  }
-
-  @Override
-  public boolean equals(Object otherFactuurInfoRow) {
-    if (this == otherFactuurInfoRow) return true;
-    if (otherFactuurInfoRow == null || getClass() != otherFactuurInfoRow.getClass()) return false;
-    FactuurInfoRow that = (FactuurInfoRow) otherFactuurInfoRow;
-
-    return factuurdatum.compareTo(that.getFactuurdatum()) == 0
-        && factuurNummer.equals(that.getFactuurNummer())
-        && factuurRegels.equals(that.getFactuurRegels());
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(factuurdatum, factuurNummer, factuurRegels);
   }
 
   public Date getFactuurdatum() {
