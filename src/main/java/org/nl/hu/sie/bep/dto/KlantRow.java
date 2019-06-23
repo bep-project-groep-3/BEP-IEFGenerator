@@ -1,6 +1,9 @@
 package org.nl.hu.sie.bep.dto;
 
-import org.nl.hu.sie.bep.external.domain.*;
+import org.nl.hu.sie.bep.external.domain.Adres;
+import org.nl.hu.sie.bep.external.domain.Factuur;
+import org.nl.hu.sie.bep.external.domain.Klant;
+import org.nl.hu.sie.bep.external.domain.Persoon;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +27,8 @@ public class KlantRow extends Row {
   private String bic;
   private List<FactuurInfoRow> facturen;
 
-  public void convert(Klant klant, Bedrijf bedrijf) {
-    bedrijfsnaam = bedrijf.getBedrijfsnaam();
+  public void convert(Klant klant) {
+    bedrijfsnaam = klant.getNaam();
     btwNummer = klant.getBtwnummer();
     iban = klant.getBankRek();
     bic = klant.getBIC();
@@ -48,5 +51,153 @@ public class KlantRow extends Row {
       factuurInfoRow.convert(factuur);
       facturen.add(factuurInfoRow);
     }
+  }
+
+  public String getBedrijfsnaam() {
+    return bedrijfsnaam;
+  }
+
+  public void setBedrijfsnaam(String bedrijfsnaam) {
+    this.bedrijfsnaam = bedrijfsnaam;
+  }
+
+  public String getAanhef() {
+    return aanhef;
+  }
+
+  public void setAanhef(String aanhef) {
+    this.aanhef = aanhef;
+  }
+
+  public String getVoornaam() {
+    return voornaam;
+  }
+
+  public void setVoornaam(String voornaam) {
+    this.voornaam = voornaam;
+  }
+
+  public String getTussenvoegsel() {
+    return tussenvoegsel;
+  }
+
+  public void setTussenvoegsel(String tussenvoegsel) {
+    this.tussenvoegsel = tussenvoegsel;
+  }
+
+  public String getAchternaam() {
+    return achternaam;
+  }
+
+  public void setAchternaam(String achternaam) {
+    this.achternaam = achternaam;
+  }
+
+  public String getStraat() {
+    return straat;
+  }
+
+  public void setStraat(String straat) {
+    this.straat = straat;
+  }
+
+  public String getHuisnummer() {
+    return huisnummer;
+  }
+
+  public void setHuisnummer(String huisnummer) {
+    this.huisnummer = huisnummer;
+  }
+
+  public String getPostcode() {
+    return postcode;
+  }
+
+  public void setPostcode(String postcode) {
+    this.postcode = postcode;
+  }
+
+  public String getPlaats() {
+    return plaats;
+  }
+
+  public void setPlaats(String plaats) {
+    this.plaats = plaats;
+  }
+
+  public String getBtwNummer() {
+    return btwNummer;
+  }
+
+  public void setBtwNummer(String btwNummer) {
+    this.btwNummer = btwNummer;
+  }
+
+  public String getIban() {
+    return iban;
+  }
+
+  public void setIban(String iban) {
+    this.iban = iban;
+  }
+
+  public String getBic() {
+    return bic;
+  }
+
+  public void setBic(String bic) {
+    this.bic = bic;
+  }
+
+  public List<FactuurInfoRow> getFacturen() {
+    return facturen;
+  }
+
+  public void setFacturen(List<FactuurInfoRow> facturen) {
+    this.facturen = facturen;
+  }
+
+  @Override
+  public String toString() {
+    return "KlantRow{"
+        + "bedrijfsnaam='"
+        + bedrijfsnaam
+        + '\''
+        + ", aanhef='"
+        + aanhef
+        + '\''
+        + ", voornaam='"
+        + voornaam
+        + '\''
+        + ", tussenvoegsel='"
+        + tussenvoegsel
+        + '\''
+        + ", achternaam='"
+        + achternaam
+        + '\''
+        + ", straat='"
+        + straat
+        + '\''
+        + ", huisnummer='"
+        + huisnummer
+        + '\''
+        + ", postcode='"
+        + postcode
+        + '\''
+        + ", plaats='"
+        + plaats
+        + '\''
+        + ", btwNummer='"
+        + btwNummer
+        + '\''
+        + ", iban='"
+        + iban
+        + '\''
+        + ", bic='"
+        + bic
+        + '\''
+        + ", facturen="
+        + facturen
+        + '}';
   }
 }

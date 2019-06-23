@@ -7,10 +7,12 @@ import org.nl.hu.sie.bep.factories.IEFFactory;
 
 public class IEFGenerator implements IEFGeneratorAdapter {
 
-  public void generate(Bedrijf bedrijf) {
+  public Row generate(Bedrijf bedrijf) {
     Row bedrijfRow = IEFFactory.create(bedrijf);
 
     SaverAdapter saverAdapter = new SaverAdapter();
     saverAdapter.save(bedrijfRow);
+
+    return bedrijfRow;
   }
 }

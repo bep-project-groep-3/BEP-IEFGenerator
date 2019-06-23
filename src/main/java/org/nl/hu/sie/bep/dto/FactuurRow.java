@@ -12,7 +12,7 @@ public class FactuurRow extends Row {
   private static final int DESCRIPTION_LENGTH = 60;
   private static final int DESCRIPTION_INFO_LENGTH = 120;
 
-  protected enum BtwType {
+  public enum BtwType {
     GEEN,
     LAAG,
     HOOG
@@ -32,11 +32,9 @@ public class FactuurRow extends Row {
 
   public void convert(Factuur factuur, FactuurRegel factuurRegel) {
     aantal = factuurRegel.getHoeveelheid();
-    prijsPerStuk =
-        factuurRegel.getTotaalprijs()
-            / factuurRegel.getHoeveelheid(); // TODO: Is er een prijs per stuk?
+    prijsPerStuk = factuurRegel.getTotaalprijs() / factuurRegel.getHoeveelheid();
     btwType = convertBtwCodeToBtwType(factuurRegel.getBTWCode());
-    regelDatum = factuur.getDatumtijd(); // TODO: Zijn er losse Factuurregel datums?
+    regelDatum = factuur.getDatumtijd();
     eenheid = factuurRegel.getEenheid();
 
     tekstRegels = new ArrayList<TekstRow>();
@@ -69,5 +67,91 @@ public class FactuurRow extends Row {
       return BtwType.LAAG;
     }
     return BtwType.HOOG;
+  }
+
+  public static int getDescriptionLength() {
+    return DESCRIPTION_LENGTH;
+  }
+
+  public static int getDescriptionInfoLength() {
+    return DESCRIPTION_INFO_LENGTH;
+  }
+
+  public String getProductOmschrijving() {
+    return productOmschrijving;
+  }
+
+  public void setProductOmschrijving(String productOmschrijving) {
+    this.productOmschrijving = productOmschrijving;
+  }
+
+  public double getAantal() {
+    return aantal;
+  }
+
+  public void setAantal(double aantal) {
+    this.aantal = aantal;
+  }
+
+  public double getPrijsPerStuk() {
+    return prijsPerStuk;
+  }
+
+  public void setPrijsPerStuk(double prijsPerStuk) {
+    this.prijsPerStuk = prijsPerStuk;
+  }
+
+  public BtwType getBtwType() {
+    return btwType;
+  }
+
+  public void setBtwType(BtwType btwType) {
+    this.btwType = btwType;
+  }
+
+  public Date getRegelDatum() {
+    return regelDatum;
+  }
+
+  public void setRegelDatum(Date regelDatum) {
+    this.regelDatum = regelDatum;
+  }
+
+  public String getEenheid() {
+    return eenheid;
+  }
+
+  public void setEenheid(String eenheid) {
+    this.eenheid = eenheid;
+  }
+
+  public List<TekstRow> getTekstRegels() {
+    return tekstRegels;
+  }
+
+  public void setTekstRegels(List<TekstRow> tekstRegels) {
+    this.tekstRegels = tekstRegels;
+  }
+
+  @Override
+  public String toString() {
+    return "FactuurRow{"
+        + "productOmschrijving='"
+        + productOmschrijving
+        + '\''
+        + ", aantal="
+        + aantal
+        + ", prijsPerStuk="
+        + prijsPerStuk
+        + ", btwType="
+        + btwType
+        + ", regelDatum="
+        + regelDatum
+        + ", eenheid='"
+        + eenheid
+        + '\''
+        + ", tekstRegels="
+        + tekstRegels
+        + '}';
   }
 }

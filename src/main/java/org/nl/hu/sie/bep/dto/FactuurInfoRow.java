@@ -27,4 +27,41 @@ public class FactuurInfoRow extends Row {
       factuurRegels.add(factuurRow);
     }
   }
+
+  public Date getFactuurdatum() {
+    return factuurdatum;
+  }
+
+  public void setFactuurdatum(Date factuurdatum) {
+    this.factuurdatum = factuurdatum;
+  }
+
+  public String getFactuurNummer() {
+    return factuurNummer;
+  }
+
+  public void setFactuurNummer(String factuurNummer) {
+    this.factuurNummer = factuurNummer;
+  }
+
+  public List<FactuurRow> getFactuurRegels() {
+    return factuurRegels;
+  }
+
+  public void setFactuurRegels(List<FactuurRow> factuurRegels) {
+    this.factuurRegels = factuurRegels;
+  }
+
+  @Override
+  public String toString() {
+    return "FactuurInfoRow{"
+        + "factuurdatum="
+        + factuurdatum
+        + ", factuurNummer='"
+        + factuurNummer
+        + '\''
+        + ", factuurRegels="
+        + factuurRegels
+        + '}';
+  }
 }
