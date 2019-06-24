@@ -37,9 +37,9 @@ public class FactuurRow extends Row {
   }
 
   private BtwType convertBtwCodeToBtwType(String btwType) {
-    if (btwType == "G") {
+    if (btwType.equals("G")) {
       return BtwType.GEEN;
-    } else if (btwType == "L") {
+    } else if (btwType.equals("L")) {
       return BtwType.LAAG;
     }
     return BtwType.HOOG;

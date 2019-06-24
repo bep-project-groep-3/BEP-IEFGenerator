@@ -42,7 +42,7 @@ public class KlantRow extends Row {
     plaats = adres.getPlaats();
 
     Persoon persoon = klant.getContactPersonen().get(0);
-    aanhef = persoon.getGeslacht() == "m" ? "dhr" : "mevr";
+    aanhef = persoon.getGeslacht().equals("m") ? "dhr" : "mevr";
     voornaam = persoon.getVoornaam();
     tussenvoegsel = persoon.getTussenvoegsel();
     achternaam = persoon.getAchternaam();

@@ -6,7 +6,7 @@
 
     <groupId>org.nl.hu.sie.bep.iefgenerator</groupId>
     <artifactId>iefgenerator</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>iefgenerator</name>
