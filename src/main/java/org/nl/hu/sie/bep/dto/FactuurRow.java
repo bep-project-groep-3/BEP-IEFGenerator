@@ -1,7 +1,8 @@
 package org.nl.hu.sie.bep.dto;
 
-import org.nl.hu.sie.bep.external.domain.Factuur;
-import org.nl.hu.sie.bep.external.domain.FactuurRegel;
+import org.nl.hu.sie.bep.business.filesaving.EditRows;
+import org.nl.hu.sie.bep.domain.domain.Factuur;
+import org.nl.hu.sie.bep.domain.domain.FactuurRegel;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,10 +10,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class FactuurRow extends Row {
-
-  private static final int DESCRIPTION_LENGTH = 60;
-  private static final int DESCRIPTION_INFO_LENGTH = 120;
-
   public enum BtwType {
     GEEN,
     LAAG,
@@ -29,7 +26,6 @@ public class FactuurRow extends Row {
   private BtwType btwType;
   private Date regelDatum;
   private String eenheid;
-  private List<TekstRow> tekstRegels;
 
   public void convert(Factuur factuur, FactuurRegel factuurRegel) {
     aantal = factuurRegel.getHoeveelheid();
@@ -37,34 +33,13 @@ public class FactuurRow extends Row {
     btwType = convertBtwCodeToBtwType(factuurRegel.getBTWCode());
     regelDatum = factuur.getDatumtijd();
     eenheid = factuurRegel.getEenheid();
-
-    tekstRegels = new ArrayList<>();
-    if (factuurRegel.getProductnaam().length() <= DESCRIPTION_LENGTH) {
-      productOmschrijving = factuurRegel.getProductnaam();
-    } else {
-      productOmschrijving = factuurRegel.getProductnaam().substring(0, DESCRIPTION_LENGTH);
-
-      String descriptionForRows = factuurRegel.getProductnaam().substring(DESCRIPTION_LENGTH);
-
-      for (int i = 0; i < descriptionForRows.length() / (double) DESCRIPTION_INFO_LENGTH; i++) {
-        TekstRow tekstRow = new TekstRow();
-
-        int substringStartIndex = i * DESCRIPTION_INFO_LENGTH;
-        int substringEndIndex =
-            substringStartIndex + DESCRIPTION_INFO_LENGTH > descriptionForRows.length()
-                ? descriptionForRows.length()
-                : substringStartIndex + DESCRIPTION_INFO_LENGTH;
-
-        tekstRow.convert(descriptionForRows.substring(substringStartIndex, substringEndIndex));
-        tekstRegels.add(tekstRow);
-      }
-    }
+    productOmschrijving = factuurRegel.getProductnaam();
   }
 
-  private BtwType convertBtwCodeToBtwType(char btwType) {
-    if (btwType == 'G') {
+  private BtwType convertBtwCodeToBtwType(String btwType) {
+    if (btwType == "G") {
       return BtwType.GEEN;
-    } else if (btwType == 'L') {
+    } else if (btwType == "L") {
       return BtwType.LAAG;
     }
     return BtwType.HOOG;
@@ -81,14 +56,12 @@ public class FactuurRow extends Row {
         && prijsPerStuk == that.getPrijsPerStuk()
         && btwType.equals(that.getBtwType())
         && regelDatum.compareTo(that.getRegelDatum()) == 0
-        && eenheid.equals(that.getEenheid())
-        && tekstRegels.equals(that.getTekstRegels());
+        && eenheid.equals(that.getEenheid());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-        productOmschrijving, aantal, prijsPerStuk, btwType, regelDatum, eenheid, tekstRegels);
+    return Objects.hash(productOmschrijving, aantal, prijsPerStuk, btwType, regelDatum, eenheid);
   }
 
   public String getProductOmschrijving() {
@@ -139,14 +112,6 @@ public class FactuurRow extends Row {
     this.eenheid = eenheid;
   }
 
-  public List<TekstRow> getTekstRegels() {
-    return tekstRegels;
-  }
-
-  public void setTekstRegels(List<TekstRow> tekstRegels) {
-    this.tekstRegels = tekstRegels;
-  }
-
   @Override
   public String toString() {
     return "FactuurRow{"
@@ -164,8 +129,46 @@ public class FactuurRow extends Row {
         + ", eenheid='"
         + eenheid
         + '\''
-        + ", tekstRegels="
-        + tekstRegels
         + '}';
+  }
+
+  @Override
+  public String getText() {
+    StringBuilder stringBuilder = new StringBuilder();
+    stringBuilder.append(
+        "R"
+            + EditRows.editString(productOmschrijving, 60)
+            + EditRows.editDouble(aantal, 5)
+            + EditRows.editDouble(prijsPerStuk, 7)
+            + EditRows.editBTWtype(btwType)
+            + EditRows.editDate(regelDatum)
+            + EditRows.editString(eenheid, 6)
+            + "\n");
+    if (productOmschrijving.length() <= 60) {
+      return stringBuilder.toString();
+    }
+
+    stringBuilder.append(getTextRows(productOmschrijving));
+    return stringBuilder.toString();
+  }
+
+  public String getTextRows(String productOmschrijving) {
+    List<String> regels = new ArrayList<>();
+    List<String> productOmschrijvingStrings = EditRows.knipProductomschrijving(productOmschrijving);
+
+    for (int i = 1; i < productOmschrijvingStrings.size(); i++) {
+      regels.add(addMultipleTextRows(productOmschrijvingStrings.get(i)));
+    }
+    StringBuilder stringBuilder = new StringBuilder();
+
+    for (String string : regels) {
+
+      stringBuilder.append(string);
+    }
+    return stringBuilder.toString();
+  }
+
+  private String addMultipleTextRows(String row) {
+    return "T" + row + "\n";
   }
 }

@@ -11,6 +11,8 @@ public abstract class Row {
 
   private RowType type;
 
+  public abstract String getText();
+
   public Row(RowType type) {
     this.type = type;
   }

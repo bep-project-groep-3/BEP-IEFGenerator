@@ -1,8 +1,0 @@
-
-rsquid:S00116"NRename this field "BIC" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ØÌµ“ıÿÿÿÿ8ù­€¸-
-osquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ş–†#8²Ğ€¸-
-usquid:S00117^"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åÔ´øÿÿÿÿ8”†Ğ€¸-
-fsquid:S00107"BConstructor has 10 parameters, which is greater than 7 authorized.(µÃÅ™ûÿÿÿÿ8²Ğ€¸-
-osquid:S00117."QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ê£°M8”†Ğ€¸-
-lsquid:S00116"MRename this field "ID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆÌèš8ù­€¸-
-psquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Èã¯°8²Ğ€¸-

@@ -1,7 +1,8 @@
 package org.nl.hu.sie.bep.dto;
 
-import org.nl.hu.sie.bep.external.domain.Factuur;
-import org.nl.hu.sie.bep.external.domain.FactuurRegel;
+import org.nl.hu.sie.bep.business.filesaving.EditRows;
+import org.nl.hu.sie.bep.domain.domain.Factuur;
+import org.nl.hu.sie.bep.domain.domain.FactuurRegel;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,6 +10,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class FactuurInfoRow extends Row {
+
   public FactuurInfoRow() {
     super(RowType.FACTUUR);
   }
@@ -80,5 +82,19 @@ public class FactuurInfoRow extends Row {
         + ", factuurRegels="
         + factuurRegels
         + '}';
+  }
+
+  @Override
+  public String getText() {
+    StringBuilder stringBuilder = new StringBuilder();
+    stringBuilder.append("F");
+    stringBuilder.append(EditRows.editDate(factuurdatum));
+    stringBuilder.append(EditRows.editString(factuurNummer, 10));
+    stringBuilder.append("\n");
+
+    for (FactuurRow factuurRow : factuurRegels) {
+      stringBuilder.append(factuurRow.getText());
+    }
+    return stringBuilder.toString();
   }
 }

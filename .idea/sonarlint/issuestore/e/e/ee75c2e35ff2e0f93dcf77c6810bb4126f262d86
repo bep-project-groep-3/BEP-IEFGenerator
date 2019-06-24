@@ -1,4 +1,6 @@
 
-isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¨‹º×8ßÊƒ¸-
-[
-squid:S106"9Replace this use of System.out or System.err by a logger.(úú‚åþÿÿÿÿ8¸¬Ëƒ¸-
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¢Û¸º8¢Â­®¸-
+Tsquid:S1481"1Remove this unused "saverAdapter" local variable.(ý¬›¾üÿÿÿÿ8¢Â­®¸-
+csquid:S1854"@Remove this useless assignment to local variable "saverAdapter".(ý¬›¾üÿÿÿÿ8¢Â­®¸-
+Osquid:S1172
+",Remove this unused method parameter "maand".(ÀŽŠóûÿÿÿÿ8Ð¸‚°¸-

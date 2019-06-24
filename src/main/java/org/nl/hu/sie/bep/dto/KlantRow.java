@@ -1,9 +1,10 @@
 package org.nl.hu.sie.bep.dto;
 
-import org.nl.hu.sie.bep.external.domain.Adres;
-import org.nl.hu.sie.bep.external.domain.Factuur;
-import org.nl.hu.sie.bep.external.domain.Klant;
-import org.nl.hu.sie.bep.external.domain.Persoon;
+import org.nl.hu.sie.bep.business.filesaving.EditRows;
+import org.nl.hu.sie.bep.domain.domain.Adres;
+import org.nl.hu.sie.bep.domain.domain.Factuur;
+import org.nl.hu.sie.bep.domain.domain.Klant;
+import org.nl.hu.sie.bep.domain.domain.Persoon;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +42,7 @@ public class KlantRow extends Row {
     plaats = adres.getPlaats();
 
     Persoon persoon = klant.getContactPersonen().get(0);
-    aanhef = persoon.getGeslacht() == 'm' ? "dhr" : "mevr";
+    aanhef = persoon.getGeslacht() == "m" ? "dhr" : "mevr";
     voornaam = persoon.getVoornaam();
     tussenvoegsel = persoon.getTussenvoegsel();
     achternaam = persoon.getAchternaam();
@@ -239,5 +240,29 @@ public class KlantRow extends Row {
         + ", facturen="
         + facturen
         + '}';
+  }
+
+  @Override
+  public String getText() {
+    StringBuilder stringBuilder = new StringBuilder();
+    stringBuilder.append("K");
+    stringBuilder.append(EditRows.editString(bedrijfsnaam, 40));
+    stringBuilder.append(EditRows.editString(aanhef, 6));
+    stringBuilder.append(EditRows.editString(voornaam, 20));
+    stringBuilder.append(EditRows.editString(tussenvoegsel, 7));
+    stringBuilder.append(EditRows.editString(achternaam, 40));
+    stringBuilder.append(EditRows.editString(straat, 60));
+    stringBuilder.append(EditRows.editString(huisnummer, 10));
+    stringBuilder.append(EditRows.editString(postcode, 6));
+    stringBuilder.append(EditRows.editString(plaats, 20));
+    stringBuilder.append(EditRows.editString(btwNummer, 13));
+    stringBuilder.append(EditRows.editString(iban, 64));
+    stringBuilder.append(EditRows.editString(bic, 10));
+    stringBuilder.append("\n");
+
+    for (FactuurInfoRow factuurInfoRow : facturen) {
+      stringBuilder.append(factuurInfoRow.getText());
+    }
+    return stringBuilder.toString();
   }
 }

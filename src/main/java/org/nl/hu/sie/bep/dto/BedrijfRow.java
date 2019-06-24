@@ -1,7 +1,8 @@
 package org.nl.hu.sie.bep.dto;
 
-import org.nl.hu.sie.bep.external.domain.Bedrijf;
-import org.nl.hu.sie.bep.external.domain.Klant;
+import org.nl.hu.sie.bep.business.filesaving.EditRows;
+import org.nl.hu.sie.bep.domain.domain.Bedrijf;
+import org.nl.hu.sie.bep.domain.domain.Klant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -165,5 +166,25 @@ public class BedrijfRow extends Row {
         + ", klanten="
         + klanten
         + '}';
+  }
+
+  @Override
+  public String getText() {
+    StringBuilder stringBuilder = new StringBuilder();
+    stringBuilder.append("B");
+    stringBuilder.append(EditRows.editString(bedrijfsNaam, 60));
+    stringBuilder.append(EditRows.editString(straat, 60));
+    stringBuilder.append(EditRows.editString(straatNummer, 10));
+    stringBuilder.append(EditRows.editString(postcode, 6));
+    stringBuilder.append(EditRows.editString(plaats, 20));
+    stringBuilder.append(EditRows.editString(btwcode, 13));
+    stringBuilder.append(EditRows.editString(iban, 64));
+    stringBuilder.append(EditRows.editString(bic, 10));
+    stringBuilder.append("\n");
+
+    for (KlantRow klantRow : klanten) {
+      stringBuilder.append(klantRow.getText());
+    }
+    return stringBuilder.toString();
   }
 }

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.nl.hu.sie.bep.business.IEFGeneratorTest" time="0.029" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.nl.hu.sie.bep.business.IEFGeneratorTest" time="0.031" tests="1" errors="0" skipped="1" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.specification.version" value="11"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="E:\Documents\school\BEP\BEP-IEFGenerator\target\test-classes;E:\Documents\school\BEP\BEP-IEFGenerator\target\classes;C:\Users\Stefan\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Stefan\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Stefan\.m2\repository\org\mongodb\mongodb-driver\3.10.1\mongodb-driver-3.10.1.jar;C:\Users\Stefan\.m2\repository\org\mongodb\bson\3.10.1\bson-3.10.1.jar;C:\Users\Stefan\.m2\repository\org\mongodb\mongodb-driver-core\3.10.1\mongodb-driver-core-3.10.1.jar;"/>
+    <property name="java.class.path" value="E:\Documents\school\BEP\BEP-IEFGenerator\target\test-classes;E:\Documents\school\BEP\BEP-IEFGenerator\target\classes;C:\Users\Stefan\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Stefan\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Stefan\.m2\repository\org\nl\hu\sie\bep\domain\domain\1.2-SNAPSHOT\domain-1.2-SNAPSHOT.jar;C:\Users\Stefan\.m2\repository\org\mongodb\mongodb-driver\3.10.1\mongodb-driver-3.10.1.jar;C:\Users\Stefan\.m2\repository\org\mongodb\bson\3.10.1\bson-3.10.1.jar;C:\Users\Stefan\.m2\repository\org\mongodb\mongodb-driver-core\3.10.1\mongodb-driver-core-3.10.1.jar;C:\Users\Stefan\.m2\repository\org\nl\hu\sie\bep\iefgenerator\iefgenerator\1.1-SNAPSHOT\iefgenerator-1.1-SNAPSHOT.jar;C:\Users\Stefan\.m2\repository\org\nl\hu\sie\bep\businessSaver\businessSaver\1.0-SNAPSHOT\businessSaver-1.0-SNAPSHOT.jar;C:\Users\Stefan\.m2\repository\org\slf4j\slf4j-api\1.8.0-beta4\slf4j-api-1.8.0-beta4.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -18,9 +18,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk-11.0.3\bin"/>
-    <property name="sun.java.command" value="C:\Users\Stefan\AppData\Local\Temp\surefire9155539498143428069\surefirebooter11995540463709643715.jar C:\Users\Stefan\AppData\Local\Temp\surefire9155539498143428069 2019-06-22T20-29-39_986-jvmRun1 surefire11934729029102951355tmp surefire_03152380418830721416tmp"/>
+    <property name="sun.java.command" value="C:\Users\Stefan\AppData\Local\Temp\surefire6554661440168346653\surefirebooter16519844187026752386.jar C:\Users\Stefan\AppData\Local\Temp\surefire6554661440168346653 2019-06-23T22-31-12_589-jvmRun1 surefire3780988616717007088tmp surefire_011932913601185241371tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="E:\Documents\school\BEP\BEP-IEFGenerator\target\test-classes;E:\Documents\school\BEP\BEP-IEFGenerator\target\classes;C:\Users\Stefan\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Stefan\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Stefan\.m2\repository\org\mongodb\mongodb-driver\3.10.1\mongodb-driver-3.10.1.jar;C:\Users\Stefan\.m2\repository\org\mongodb\bson\3.10.1\bson-3.10.1.jar;C:\Users\Stefan\.m2\repository\org\mongodb\mongodb-driver-core\3.10.1\mongodb-driver-core-3.10.1.jar;"/>
+    <property name="surefire.test.class.path" value="E:\Documents\school\BEP\BEP-IEFGenerator\target\test-classes;E:\Documents\school\BEP\BEP-IEFGenerator\target\classes;C:\Users\Stefan\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Stefan\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Stefan\.m2\repository\org\nl\hu\sie\bep\domain\domain\1.2-SNAPSHOT\domain-1.2-SNAPSHOT.jar;C:\Users\Stefan\.m2\repository\org\mongodb\mongodb-driver\3.10.1\mongodb-driver-3.10.1.jar;C:\Users\Stefan\.m2\repository\org\mongodb\bson\3.10.1\bson-3.10.1.jar;C:\Users\Stefan\.m2\repository\org\mongodb\mongodb-driver-core\3.10.1\mongodb-driver-core-3.10.1.jar;C:\Users\Stefan\.m2\repository\org\nl\hu\sie\bep\iefgenerator\iefgenerator\1.1-SNAPSHOT\iefgenerator-1.1-SNAPSHOT.jar;C:\Users\Stefan\.m2\repository\org\nl\hu\sie\bep\businessSaver\businessSaver\1.0-SNAPSHOT\businessSaver-1.0-SNAPSHOT.jar;C:\Users\Stefan\.m2\repository\org\slf4j\slf4j-api\1.8.0-beta4\slf4j-api-1.8.0-beta4.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Stefan"/>
     <property name="user.language" value="en"/>
@@ -34,7 +34,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\Stefan\AppData\Local\Temp\surefire9155539498143428069\surefirebooter11995540463709643715.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Stefan\AppData\Local\Temp\surefire6554661440168346653\surefirebooter16519844187026752386.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.3+12-LTS"/>
@@ -62,5 +62,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="org.nl.hu.sie.bep.business.IEFGeneratorTest" time="0.002"/>
+  <testcase name="testIEFGenerator" classname="org.nl.hu.sie.bep.business.IEFGeneratorTest" time="0">
+    <skipped/>
+  </testcase>
 </testsuite>
