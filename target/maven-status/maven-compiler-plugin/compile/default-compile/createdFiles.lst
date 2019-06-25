@@ -1,0 +1,10 @@
+org\nl\hu\sie\bep\adapter\IEFGeneratorAdapter.class
+org\nl\hu\sie\bep\dto\BedrijfRow.class
+org\nl\hu\sie\bep\dto\KlantRow.class
+org\nl\hu\sie\bep\factories\IEFFactory.class
+org\nl\hu\sie\bep\dto\Row.class
+org\nl\hu\sie\bep\dto\Row$RowType.class
+org\nl\hu\sie\bep\adapter\IEFGenerator.class
+org\nl\hu\sie\bep\dto\FactuurInfoRow.class
+org\nl\hu\sie\bep\dto\FactuurRow.class
+org\nl\hu\sie\bep\dto\FactuurRow$BtwType.class

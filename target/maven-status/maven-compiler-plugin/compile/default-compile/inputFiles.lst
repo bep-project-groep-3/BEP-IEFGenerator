@@ -1,0 +1,16 @@
+E:\Documents\school\BEP\BEP-IEFGenerator\src\main\java\org\nl\hu\sie\bep\dto\FactuurInfoRow.java
+E:\Documents\school\BEP\BEP-IEFGenerator\src\main\java\org\nl\hu\sie\bep\external\domain\Factuur.java
+E:\Documents\school\BEP\BEP-IEFGenerator\src\main\java\org\nl\hu\sie\bep\factories\IEFFactory.java
+E:\Documents\school\BEP\BEP-IEFGenerator\src\main\java\org\nl\hu\sie\bep\dto\KlantRow.java
+E:\Documents\school\BEP\BEP-IEFGenerator\src\main\java\org\nl\hu\sie\bep\external\domain\Persoon.java
+E:\Documents\school\BEP\BEP-IEFGenerator\src\main\java\org\nl\hu\sie\bep\external\domain\Klant.java
+E:\Documents\school\BEP\BEP-IEFGenerator\src\main\java\org\nl\hu\sie\bep\external\domain\Adres.java
+E:\Documents\school\BEP\BEP-IEFGenerator\src\main\java\org\nl\hu\sie\bep\dto\FactuurRow.java
+E:\Documents\school\BEP\BEP-IEFGenerator\src\main\java\org\nl\hu\sie\bep\external\domain\Bedrijf.java
+E:\Documents\school\BEP\BEP-IEFGenerator\src\main\java\org\nl\hu\sie\bep\dto\BedrijfRow.java
+E:\Documents\school\BEP\BEP-IEFGenerator\src\main\java\org\nl\hu\sie\bep\external\domain\FactuurRegel.java
+E:\Documents\school\BEP\BEP-IEFGenerator\src\main\java\org\nl\hu\sie\bep\adapter\IEFGeneratorAdapter.java
+E:\Documents\school\BEP\BEP-IEFGenerator\src\main\java\org\nl\hu\sie\bep\dto\TekstRow.java
+E:\Documents\school\BEP\BEP-IEFGenerator\src\main\java\org\nl\hu\sie\bep\external\saver\SaverAdapter.java
+E:\Documents\school\BEP\BEP-IEFGenerator\src\main\java\org\nl\hu\sie\bep\adapter\IEFGenerator.java
+E:\Documents\school\BEP\BEP-IEFGenerator\src\main\java\org\nl\hu\sie\bep\dto\Row.java
